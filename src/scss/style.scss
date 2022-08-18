@@ -1,0 +1,383 @@
+@import './variables';
+@import './projects.scss';
+@import './blog.scss';
+@import './about.scss';
+@import './contact.scss';
+
+
+@font-face {
+    font-family: "cairoFont";
+    src: url(../fonts/Cairo-Regular.ttf);
+}
+
+body{
+    font-family: "cairoFont", Georgia, 'Times New Roman', Times, serif !important;
+}
+
+.container-fluid{
+    padding-left:0 !important;
+    padding-right:0 !important;
+    overflow-x: hidden;
+}
+
+.top-menu{
+    .navbar{
+        padding:0 100px;
+        background-color: #fff !important;
+        font-weight:bold;
+    }
+
+    .navbar-nav{
+        li>a{
+            transition-property: background-color;
+            transition-duration: .5s;
+
+            &:hover{
+                color:$main-color !important;
+                border-bottom:1px solid $main-color;
+                background-color:$custom-color;
+            }
+        }
+
+        .active a{
+            color:$main-color !important;
+            border-bottom:1px solid $main-color !important;
+        }
+    }
+}
+
+.carousel-top{
+    .row{
+        display:block;
+    }
+
+    .carousel{
+        .carousel-item{
+            img{
+                height:450px;
+            }
+
+            .overlay{
+                background-color:rgba(65,155,155,0.5);
+                position:absolute;
+                top:0;
+                right:0;
+                height:100%;
+                width:100%;
+                z-index:1;
+                display: flex !important;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .carousel-indicators{
+            li{
+                width:15px;
+                height:15px;
+                border-radius:50%;
+                margin:20px 5px 0 0;
+
+                &.active{
+                    background-color:$main-color;
+                }
+            }
+        }
+
+        .carousel-caption{
+            h1{
+                font-weight:bold;
+                color:#fff;
+                margin-bottom:50px;
+            }
+            
+            h4{
+                width:60%;
+                color:$custom-color;
+            }
+        }
+    }
+}
+
+a.custom-btn{
+    padding:10px 20px !important;
+    color: $main-color !important;;
+    border:1px solid $main-color !important;
+    font-weight:bold !important;
+
+    &:hover,
+    &:focus{
+        color:$custom-color !important;
+        background-color: $main-color !important;
+        border:1px solid $custom-color !important;
+    }
+}
+
+.who-are-we{
+    .custom-paragraph{
+        line-height:2em;
+    }
+
+    .company-name{
+        color:$main-color;
+    }
+}
+
+.who-are-we, .latest-projects{
+    .custom-btn-main{
+        padding:20px !important;
+        width:250px !important;
+        color:#fff !important;
+        background-color: $main-color !important;
+        font-weight:bold !important;
+
+        &:hover{
+            color:#000 !important;
+            background-color: $main-color !important;
+        }
+    }
+}
+
+.latest-projects{
+
+    background-color: #ffffcc;
+
+    #latest-company-projects{
+        width:75%;
+
+        .thumbnail2{
+            position:relative;
+            margin-top:20px;
+            margin-bottom:20px;
+
+            .caption2{
+                position:absolute;
+                top:0;
+                right:0;
+                height:100%;
+                width:100%;
+                background-color: rgba(65,155,155,0.5);
+                text-align:center;
+                padding:2%;
+                color:#fff;
+                display:none;
+            }
+
+            .project-category{
+                position: absolute;
+                right:0;
+                top:5%;
+                background-color:rgba(240,240,240,0.75);
+                padding:10px;
+                font-weight:bold;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                box-shadow:0 5px 20px 0 #202020;
+            }
+
+        }
+
+        .carousel-control-prev{
+            position:absolute;
+            right:-6%;
+            width:0;
+            color:#252222;
+        }
+
+        .carousel-control-next{
+            position:absolute;
+            left:-6%;
+            width:0;
+            color:#252222;
+        }
+    }
+}
+
+.said-about-company{
+    #said-about-company-carousel{
+        .custom-paragraph{
+            line-height:2em;
+        }
+
+        .custom-img{
+            margin:20px;
+            border-radius:10px;
+        }
+    }
+
+    .fa-angle-left,
+    .fa-angle-right{
+        color:#252222;
+    }
+    
+    .carousel-control-prev{
+        position: absolute;
+        right:7%;
+        width:0;
+    }
+
+    .carousel-control-next{
+        position: absolute;
+        left:7%;
+        width:0;
+    }
+}
+
+
+@media (min-width:992px) and (max-width:1500px){
+    .project-details{
+        display:none;
+    }
+
+    .thumbnail2{
+        .caption2{
+            a.btn{
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.clients{
+    background-color: #419b9b;
+}
+
+.latest-posts{
+
+    .card-body{
+        width:90%;
+        border:1px solid #ccc;
+        background-color: #fff;
+        position:relative;
+        top:-17px;
+        left:-5%;
+        border-radius:5px;
+    }
+
+    .card-title{
+        font-weight:bold;
+        font-size:18px;
+    }
+
+    .card-text{
+        font-size:14px;
+    }
+}
+
+.project-details{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow:hidden;
+}
+
+footer{
+    height:450px;
+    background-color:#393939;
+
+    h2{
+        color:$custom-color;
+        font-size:150%;
+    }
+
+    .line1{
+        width:5%;
+        border-top:3px solid $custom-color;
+    }
+
+    #footer-nav-link{
+        a{
+            text-decoration: none;
+            color:#bbb;
+            margin-left:15px;
+            font-size:90%;
+
+            &:hover,
+            &:focus{
+                color:$custom-color;
+            }
+        }
+    }
+
+    .line2{
+        width:60%;
+        border-top:3px solid $custom-color;
+    }
+
+    .form{
+        margin-left:48px;
+        margin-right:48px;
+
+        input{
+            background-color: #202020;
+            border-radius:1px !important;
+            border:0;
+
+            &:focus{
+                background-color: #202020;
+                border-color:$custom-color;
+                box-shadow: 0 0 2px 0 $custom-color;
+                color:$custom-color;
+            }
+        }
+    }
+
+    .copyright{
+        color:#969696;
+        font-size:90%;
+        font-weight:bold;
+    }
+
+    .copyright-link{
+        text-decoration: none !important;
+        cursor: pointer;
+        &:hover,
+        &:focus{
+            color: $custom-color;
+        }
+    }
+}
+
+.btn-light{
+    &:hover,
+    &:focus{
+        color:$custom-color !important;
+        background-color: #363636 !important;
+        border: 1px solid $custom-color !important;
+        transition-property: border,color,background-color !important;
+        transition-duration: .3s !important;
+    }
+}
+
+@media(max-width:991px){
+    .top-menu{
+        .navbar{
+            padding: 0 20px;
+            .navbar-nav{
+                a{
+                    &:hover{
+                        border-bottom:none !important;
+                        padding-right:5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:767px){
+    .carousel-top{
+        .carousel{
+            .carousel-caption{
+                h1{
+                    font-size:30px;
+                }
+
+                h4{
+                    font-size:20px;
+                }
+            }
+        }
+    }
+}
